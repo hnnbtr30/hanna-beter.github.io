@@ -103,7 +103,7 @@ Then open your browser to:
 ### 1. Update Contact Information
 In [`index.html`](file:///C:/Users/Red/.gemini/antigravity/scratch/hanna-beter-portfolio/index.html) and [`js/app.js`](file:///C:/Users/Red/.gemini/antigravity/scratch/hanna-beter-portfolio/js/app.js):
 * Search for `habbeter@example.com` and replace with your actual personal or institutional email.
-* Update the LinkedIn (`https://linkedin.com/in/...`) and GitHub (`https://github.com/...`) links with your exact profile URLs.
+* Update the LinkedIn (`https://linkedin.com/in/...`) and GitHub (`https://github.com/hnnbtr30`) links with your exact profile URLs.
 
 ### 2. Connect Contact Form to Live Email (e.g. Formspree)
 To receive messages straight to your inbox without writing backend code:
@@ -115,7 +115,7 @@ To receive messages straight to your inbox without writing backend code:
 
 ### 3. Deploy to the Web (100% Free)
 #### Option A: GitHub Pages
-1. Push this folder to a GitHub repository named `hanna-beter.github.io` (or any repository name).
+1. Push this folder to a GitHub repository named `hnnbtr30.github.io` (or `hanna-beter.github.io`).
 2. Go to **Settings** > **Pages** > Select branch `main` and root `/`.
 3. Your luxury portfolio will be live in ~60 seconds!
 
