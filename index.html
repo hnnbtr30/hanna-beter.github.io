@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanna Abigail B. Beter — Computer Engineering Portfolio</title>
+  <meta name="description" content="Personal portfolio of Hanna Abigail B. Beter, Computer Engineering student passionate about digital logic, software systems, and human-centered design.">
+  <meta name="author" content="Hanna Abigail B. Beter">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maroon: {
+              DEFAULT: '#4A0D22',
+              deep: '#360818',
+              dark: '#22050E',
+              surface: '#1A040B',
+              burgundy: '#6B1732',
+              card: '#290915'
+            },
+            gold: {
+              DEFAULT: '#D4AF72',
+              light: '#F5E3BD',
+              warm: '#E2C288',
+              muted: '#9E7D46',
+              glow: 'rgba(212, 175, 114, 0.25)'
+            },
+            ivory: {
+              DEFAULT: '#F8F5F0',
+              light: '#FCFBF9',
+              surface: '#F1EBE1',
+              border: '#E3DAC9'
+            },
+            charcoal: {
+              DEFAULT: '#171316',
+              deep: '#100C0F',
+              body: '#2D2529',
+              muted: '#71676D'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', '"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#171316] text-stone-200 antialiased selection:bg-[#D4AF72] selection:text-[#2E0513]">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-[#2B0715] via-[#4A0D22] to-[#2B0715] border-b border-[#D4AF72]/20 py-2 px-4 text-center text-xs tracking-wider font-sans">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-[#D4AF72] animate-pulse"></span>
+      <span class="text-[#F3E5AB]">Undergraduate Computer Engineering Portfolio</span>
+      <span class="text-stone-400 hidden sm:inline">•</span>
+      <span class="text-stone-300 hidden sm:inline">Open for Academic Collaborations & Engineering Projects</span>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header id="mainNavbar" class="glass-nav sticky top-0 z-40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#hero" class="flex items-center gap-3.5 group" aria-label="Hanna Abigail B. Beter Home">
+        <div class="w-11 h-11 rounded-full monogram-badge flex items-center justify-center text-[#D4AF72] font-display font-bold text-lg shadow-inner group-hover:border-[#D4AF72] transition-colors">
+          HB
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-lg tracking-wider font-semibold text-stone-100 group-hover:text-[#D4AF72] transition-colors">
+            Hanna Abigail B. Beter
+          </span>
+          <span class="text-[10px] tracking-widest uppercase text-[#D4AF72]/80 font-sans">
+            Computer Engineering
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm tracking-wide font-sans" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-desktop-link text-stone-300 hover:text-[#D4AF72] transition-colors py-1">Home</a>
+        <a href="#about" class="nav-desktop-link text-stone-300 hover:text-[#D4AF72] transition-colors py-1">About</a>
+        <a href="#skills" class="nav-desktop-link text-stone-300 hover:text-[#D4AF72] transition-colors py-1">Skills</a>
+        <a href="#projects" class="nav-desktop-link text-stone-300 hover:text-[#D4AF72] transition-colors py-1">Projects</a>
+        <a href="#education" class="nav-desktop-link text-stone-300 hover:text-[#D4AF72] transition-colors py-1">Education</a>
+        <a href="#contact" class="nav-desktop-link text-stone-300 hover:text-[#D4AF72] transition-colors py-1">Contact</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contact" class="btn-gold px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2">
+          <span>Let’s Connect</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-stone-300 hover:text-[#D4AF72] focus:outline-none focus:ring-2 focus:ring-[#D4AF72]/50 rounded-lg" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <svg class="icon-menu w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="icon-close hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobileMenuDrawer" class="hidden md:hidden bg-[#1B050E]/98 border-b border-[#D4AF72]/30 px-6 py-6 space-y-4">
+      <div class="flex flex-col space-y-3 font-sans text-base">
+        <a href="#hero" class="mobile-nav-link text-stone-200 hover:text-[#D4AF72] py-2 border-b border-stone-800">Home</a>
+        <a href="#about" class="mobile-nav-link text-stone-200 hover:text-[#D4AF72] py-2 border-b border-stone-800">About Me</a>
+        <a href="#skills" class="mobile-nav-link text-stone-200 hover:text-[#D4AF72] py-2 border-b border-stone-800">Skills & Expertise</a>
+        <a href="#projects" class="mobile-nav-link text-stone-200 hover:text-[#D4AF72] py-2 border-b border-stone-800">Featured Projects</a>
+        <a href="#education" class="mobile-nav-link text-stone-200 hover:text-[#D4AF72] py-2 border-b border-stone-800">Education & Journey</a>
+        <a href="#contact" class="mobile-nav-link text-stone-200 hover:text-[#D4AF72] py-2">Get in Touch</a>
+      </div>
+      <div class="pt-2">
+        <a href="#contact" class="btn-gold w-full py-3 rounded-full text-xs font-semibold uppercase tracking-wider text-center block">
+          Let’s Connect
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       1. HERO SECTION
+       Asymmetrical editorial layout, deep maroon background, gold accents
+       =================================================================== -->
+  <section id="hero" class="relative min-h-[90vh] flex items-center maroon-gradient-bg bg-ambient-maroon py-20 px-6 overflow-hidden">
+    
+    <!-- Decorative background elements -->
+    <div class="absolute inset-0 bg-pattern-subtle opacity-40 pointer-events-none"></div>
+    <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#D4AF72]/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#6B1732]/30 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+      
+      <!-- Left Column: Editorial Headline & Bio -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#D4AF72]/40 bg-[#360818]/80 text-[#D4AF72] text-xs font-medium tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-[#D4AF72] animate-pulse"></span>
+          <span>B.S. Computer Engineering Student</span>
+          <span class="text-stone-400">•</span>
+          <span>ICCT Colleges</span>
+        </div>
+
+        <!-- Main Title & Name -->
+        <div class="space-y-3">
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-tight text-stone-100 leading-[1.08]">
+            Hanna Abigail <br>
+            <span class="italic font-light gold-gradient-text">B. Beter</span>
+          </h1>
+          <p class="text-sm sm:text-base font-sans uppercase tracking-[0.2em] text-[#D4AF72] font-medium">
+            Computer Engineering Student &nbsp;|&nbsp; Aspiring Technology Professional
+          </p>
+        </div>
+
+        <!-- Editorial Divider -->
+        <div class="editorial-divider-left w-3/4"></div>
+
+        <!-- Intro Text -->
+        <p class="text-base sm:text-lg text-stone-300 font-sans leading-relaxed max-w-2xl font-light">
+          “I’m a Computer Engineering student passionate about technology, creative problem-solving, and designing digital experiences that bring ideas to life.”
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="pt-4 flex flex-wrap items-center gap-4">
+          <a href="#projects" class="btn-gold px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2.5">
+            <span>Explore My Work</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+          <a href="#contact" class="btn-outline-gold px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-2.5">
+            <span>Get in Touch</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Subtle Stats/Pillars Bar -->
+        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-[#D4AF72]/20 max-w-lg">
+          <div>
+            <div class="font-serif text-2xl font-semibold text-[#D4AF72]">Hardware</div>
+            <div class="text-[11px] text-stone-400 uppercase tracking-wider mt-0.5">Circuit & Digital Logic</div>
+          </div>
+          <div>
+            <div class="font-serif text-2xl font-semibold text-[#D4AF72]">Software</div>
+            <div class="text-[11px] text-stone-400 uppercase tracking-wider mt-0.5">Systems & Development</div>
+          </div>
+          <div>
+            <div class="font-serif text-2xl font-semibold text-[#D4AF72]">Design</div>
+            <div class="text-[11px] text-stone-400 uppercase tracking-wider mt-0.5">UI/UX & Prototyping</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Editorial Portrait / Luxury Guilloche Crest -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-md">
+          
+          <!-- Outer Gold Decorative Border Card -->
+          <div class="p-4 sm:p-6 rounded-3xl border border-[#D4AF72]/40 bg-gradient-to-b from-[#340718]/90 via-[#22050E]/95 to-[#17030A] shadow-2xl relative">
+            
+            <!-- Corner Accents -->
+            <div class="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-[#D4AF72]"></div>
+            <div class="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-[#D4AF72]"></div>
+            <div class="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-[#D4AF72]"></div>
+            <div class="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-[#D4AF72]"></div>
+
+            <!-- Central Editorial Composition -->
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-[#4A0D22] via-[#2E0715] to-[#120308] border border-[#D4AF72]/30 flex flex-col items-center justify-center p-8 relative text-center">
+              
+              <!-- Subtle Guilloche Geometric Overlay SVG -->
+              <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" viewBox="0 0 400 500" fill="none">
+                <circle cx="200" cy="220" r="160" stroke="#D4AF72" stroke-width="0.75" stroke-dasharray="4 4" />
+                <circle cx="200" cy="220" r="120" stroke="#D4AF72" stroke-width="0.75" />
+                <circle cx="200" cy="220" r="80" stroke="#D4AF72" stroke-width="0.5" stroke-dasharray="2 4" />
+                <path d="M40 220 H360 M200 60 V380" stroke="#D4AF72" stroke-width="0.5" stroke-opacity="0.3" />
+                <!-- Subtle circuit traces -->
+                <path d="M90 120 H150 V180 H180" stroke="#D4AF72" stroke-width="1" stroke-opacity="0.5" />
+                <path d="M310 320 H250 V260 H220" stroke="#D4AF72" stroke-width="1" stroke-opacity="0.5" />
+                <circle cx="180" cy="180" r="3" fill="#D4AF72" />
+                <circle cx="220" cy="260" r="3" fill="#D4AF72" />
+              </svg>
+
+              <!-- Central Monogram Crest -->
+              <div class="w-32 h-32 rounded-full border-2 border-[#D4AF72]/80 bg-[#360818]/90 flex items-center justify-center relative shadow-xl mb-6">
+                <div class="absolute inset-1.5 rounded-full border border-dashed border-[#D4AF72]/40"></div>
+                <span class="font-display text-4xl text-[#D4AF72] font-bold tracking-wider">HB</span>
+              </div>
+
+              <!-- Nameplate -->
+              <h2 class="font-serif text-2xl font-normal text-stone-100 tracking-wide">
+                Hanna Abigail B. Beter
+              </h2>
+              <p class="text-xs font-sans uppercase tracking-[0.15em] text-[#D4AF72] mt-1">
+                Computer Engineering
+              </p>
+              <div class="text-[11px] text-stone-400 mt-2 font-sans max-w-xs">
+                ICCT Colleges Student Portfolio
+              </div>
+
+              <!-- Bottom Tag -->
+              <div class="mt-6 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#17050D] border border-[#D4AF72]/30 text-[11px] text-stone-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Active Coursework & Projects</span>
+              </div>
+
+            </div>
+
+            <!-- Floating Badge: Systems Thinking -->
+            <div class="absolute -bottom-4 -left-4 p-3 rounded-xl bg-[#230510] border border-[#D4AF72]/50 shadow-xl hidden sm:flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-[#D4AF72]/15 text-[#D4AF72] flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-stone-200">Hardware & Software</div>
+                <div class="text-[10px] text-stone-400">Integrated Thinking</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none text-stone-400">
+      <span class="text-[10px] uppercase tracking-widest text-[#D4AF72]/70 font-sans">Scroll to Discover</span>
+      <div class="w-5 h-9 rounded-full border border-[#D4AF72]/40 flex justify-center pt-2">
+        <div class="w-1 h-2 rounded-full bg-[#D4AF72] animate-bounce"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================================================================
+       2. ABOUT ME SECTION
+       Warm ivory luxury editorial layout, subtle gold dividers
+       =================================================================== -->
+  <section id="about" class="py-28 px-6 bg-[#F8F5F0] text-stone-900 relative">
+    
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#6B1732]">
+          <span>01 / Profile & Philosophy</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2A0815] leading-tight">
+          Driven by Curiosity. <br>
+          <span class="italic font-light text-[#6B1732]">Inspired by Innovation.</span>
+        </h2>
+        <div class="w-24 h-0.5 bg-[#D4AF72] mt-4"></div>
+      </div>
+
+      <!-- Main Editorial Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Editorial Paragraphs -->
+        <div class="lg:col-span-7 space-y-6 text-stone-700 font-sans leading-relaxed text-base sm:text-lg">
+          
+          <p class="first-letter:font-serif first-letter:text-5xl first-letter:float-left first-letter:mr-3 first-letter:text-[#4A0D22] first-letter:font-bold">
+            As a Computer Engineering student, I enjoy exploring how technology, logical thinking, and creativity can work together to solve real-world problems. Through academic projects and hands-on learning, I continue to develop my technical abilities, strengthen my problem-solving skills, and discover new possibilities in technology.
+          </p>
+
+          <p>
+            My academic journey at <strong>ICCT Colleges</strong> has instilled in me a deep appreciation for both sides of modern computing: the concrete physical world of electronic circuits and digital logic, alongside the structured realm of software architecture and human-centered design.
+          </p>
+
+          <p class="text-stone-600 text-base">
+            Whether modeling relational databases for clinic workflows, prototyping intuitive interfaces in Figma, or analyzing logic circuits on a breadboard, my goal is to design solutions that are practical, ethical, and built with genuine care for the people who rely on them.
+          </p>
+
+          <!-- Action Links -->
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <a href="#projects" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#4A0D22] hover:text-[#6B1732] border-b border-[#4A0D22] pb-1 transition-colors">
+              <span>View Academic Projects</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="#education" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#6B1732] hover:text-[#4A0D22] border-b border-[#6B1732]/40 pb-1 transition-colors">
+              <span>Explore Educational Background</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: 3 Luxury Pillar Cards -->
+        <div class="lg:col-span-5 space-y-5">
+          
+          <!-- Card 1: Engineering Mindset -->
+          <div class="card-luxury-light p-6 rounded-2xl border border-[#E3DAC9] bg-white shadow-sm">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-[#4A0D22]/10 text-[#4A0D22] flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-semibold text-[#2A0815]">Engineering Mindset</h3>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed font-sans">
+              Approaching complex challenges through methodical decomposition, digital logic rules, and robust algorithmic thinking.
+            </p>
+          </div>
+
+          <!-- Card 2: Human-Centered Design -->
+          <div class="card-luxury-light p-6 rounded-2xl border border-[#E3DAC9] bg-white shadow-sm">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-[#6B1732]/10 text-[#6B1732] flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-semibold text-[#2A0815]">Human-Centered Design</h3>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed font-sans">
+              Prioritizing clarity, visual calm, and low cognitive burden so that real users can navigate systems without frustration.
+            </p>
+          </div>
+
+          <!-- Card 3: Continuous Exploration -->
+          <div class="card-luxury-light p-6 rounded-2xl border border-[#E3DAC9] bg-white shadow-sm">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-[#D4AF72]/20 text-[#9E7D46] flex items-center justify-center">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-semibold text-[#2A0815]">Continuous Exploration</h3>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed font-sans">
+              Eagerly embracing academic laboratory experiments, technopreneurship concepts, and modern development standards.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       3. SKILLS & EXPERTISE SECTION
+       Refined cards, minimal icons, authentic indicators (no fake progress bars)
+       =================================================================== -->
+  <section id="skills" class="py-28 px-6 bg-[#171316] relative border-t border-[#D4AF72]/20">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF72]">
+          <span>02 / Core Competencies</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-stone-100">
+          Skills & Technical Expertise
+        </h2>
+        <p class="text-sm text-stone-400 font-sans max-w-xl mx-auto leading-relaxed">
+          Competencies developed through academic coursework, laboratory experimentation, and independent project prototyping.
+        </p>
+        <div class="w-20 h-0.5 bg-[#D4AF72] mx-auto mt-4"></div>
+      </div>
+
+      <!-- 4 Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Category 1: Programming & Development -->
+        <div class="card-luxury-dark p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#4A0D22]/60 border border-[#D4AF72]/30 flex items-center justify-center text-[#D4AF72] mb-5">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-stone-100 mb-1">Programming & Dev</h3>
+            <p class="text-xs text-stone-400 mb-6 font-sans">Software logic & web foundations</p>
+
+            <ul class="space-y-4">
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Java</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Academic Core</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">OOP, algorithms, and modular class design.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Visual Basic .NET</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Desktop Apps</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Windows Forms & database management prototypes.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">HTML & CSS</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Semantic Web</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Responsive styling, layouts & accessibility.</p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">JavaScript</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Interactive Web</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Client-side DOM manipulation & dynamic state.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Category 2: Computer Engineering -->
+        <div class="card-luxury-dark p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#6B1732]/60 border border-[#D4AF72]/30 flex items-center justify-center text-[#D4AF72] mb-5">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-stone-100 mb-1">Computer Engineering</h3>
+            <p class="text-xs text-stone-400 mb-6 font-sans">Digital logic & hardware systems</p>
+
+            <ul class="space-y-4">
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Digital Logic</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Logic Gates</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Boolean algebra, K-maps, combinational circuits.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Basic Electronics</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Circuit Labs</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Passive components, Ohm’s law & breadboarding.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Verilog HDL</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">HDL Models</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Hardware description, behavioral & RTL logic.</p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">HW & SW Integration</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Sensors & MCUs</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Microcontroller interfacing & environmental sensors.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Category 3: Design & Prototyping -->
+        <div class="card-luxury-dark p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#4A0D22]/60 border border-[#D4AF72]/30 flex items-center justify-center text-[#D4AF72] mb-5">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-stone-100 mb-1">Design & Prototyping</h3>
+            <p class="text-xs text-stone-400 mb-6 font-sans">Human experience & interface clarity</p>
+
+            <ul class="space-y-4">
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">UI/UX Design</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">User Empathy</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Journey mapping, usability and clear hierarchy.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Wireframing</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Low-Fidelity</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Rapid structural layout concepts & task flows.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Interactive Prototyping</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Clickable Flows</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Component interactions, transitions & states.</p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Interface Design</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Visual Polish</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Typography balance, color palettes & spacing.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Category 4: Tools & Platforms -->
+        <div class="card-luxury-dark p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#6B1732]/60 border border-[#D4AF72]/30 flex items-center justify-center text-[#D4AF72] mb-5">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold text-stone-100 mb-1">Tools & Platforms</h3>
+            <p class="text-xs text-stone-400 mb-6 font-sans">Engineering & creative environments</p>
+
+            <ul class="space-y-4">
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Visual Studio</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Development</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">IDE project configuration, build & debugging.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">AutoCAD</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Engineering</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">2D technical drafting, projections & dimensions.</p>
+              </li>
+              <li class="border-b border-stone-800/80 pb-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Figma</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Design Tool</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Component variants, responsive frames & flows.</p>
+              </li>
+              <li>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-semibold text-stone-200">Canva</span>
+                  <span class="text-[10px] font-mono text-[#D4AF72] bg-[#360818] px-2 py-0.5 rounded border border-[#D4AF72]/30">Presentations</span>
+                </div>
+                <p class="text-xs text-stone-400 mt-1">Pitch decks, technical posters & summaries.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Honest Transparency Note -->
+      <div class="mt-12 p-4 rounded-xl border border-[#D4AF72]/20 bg-[#250813]/60 max-w-2xl mx-auto text-center text-xs text-stone-400 font-sans">
+        <span class="text-[#D4AF72] font-semibold">Integrity Notice:</span> Skills are framed realistically based on academic coursework, lab activities, and active student learning without exaggerated metrics.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       4. FEATURED PROJECTS SECTION
+       Editorial project gallery with category filters & authentic tags
+       =================================================================== -->
+  <section id="projects" class="py-28 px-6 bg-[#1F0712] relative border-t border-[#D4AF72]/20">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF72]">
+            <span>03 / Selected Works</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-stone-100">
+            Featured Projects & Case Studies
+          </h2>
+          <p class="text-sm text-stone-400 font-sans max-w-xl leading-relaxed">
+            Academic proposals, system architectures, and hardware concepts developed to solve practical challenges.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 text-xs font-sans">
+          <button data-filter="all" class="project-filter-btn px-4 py-2 rounded-full bg-[#D4AF72] text-[#230510] font-semibold transition-all shadow-md">
+            All Projects
+          </button>
+          <button data-filter="development" class="project-filter-btn px-4 py-2 rounded-full bg-stone-900/60 text-stone-300 border border-stone-800 hover:border-[#D4AF72]/40 transition-all">
+            Development & Systems
+          </button>
+          <button data-filter="uiux" class="project-filter-btn px-4 py-2 rounded-full bg-stone-900/60 text-stone-300 border border-stone-800 hover:border-[#D4AF72]/40 transition-all">
+            UI/UX & Concepts
+          </button>
+          <button data-filter="hardware" class="project-filter-btn px-4 py-2 rounded-full bg-stone-900/60 text-stone-300 border border-stone-800 hover:border-[#D4AF72]/40 transition-all">
+            Hardware & Engineering
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- 1. DialyCare -->
+        <article class="project-card-item card-luxury-dark rounded-2xl overflow-hidden flex flex-col justify-between group" data-category="development">
+          <div>
+            <!-- Visual Preview Graphic -->
+            <div class="h-52 bg-gradient-to-br from-[#360818] to-[#1E060F] p-5 border-b border-[#D4AF72]/20 relative overflow-hidden flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-[#4A0D22] text-[#D4AF72] border border-[#D4AF72]/40">
+                  Proposed Digital System
+                </span>
+                <span class="text-[10px] uppercase tracking-wider text-stone-400">Healthcare Tech</span>
+              </div>
+              <!-- Dialysis schematic illustration -->
+              <div class="space-y-2 py-2">
+                <div class="flex items-center justify-between text-xs font-mono text-stone-300">
+                  <span>CLINICAL MONITOR</span>
+                  <span class="text-emerald-400">STATUS: ACTIVE</span>
+                </div>
+                <div class="h-2 rounded-full bg-stone-950 overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-[#D4AF72] to-[#F5E3BD] w-3/4 rounded-full"></div>
+                </div>
+                <div class="flex justify-between text-[11px] text-stone-400 font-mono">
+                  <span>Hemodialysis Bed 04</span>
+                  <span class="text-[#D4AF72]">180 / 240 min</span>
+                </div>
+              </div>
+              <div class="text-[11px] text-stone-400 flex items-center justify-between border-t border-stone-800/80 pt-2">
+                <span>Caregiver Push Gateway: Ready</span>
+                <span class="text-[#D4AF72]">SMS Alerted</span>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6 space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-widest text-[#D4AF72]">Development & Systems</div>
+              <h3 class="font-serif text-2xl font-normal text-stone-100 group-hover:text-[#D4AF72] transition-colors">
+                DialyCare — Dialysis Management System
+              </h3>
+              <p class="text-xs text-stone-300 leading-relaxed font-sans line-clamp-3">
+                A proposed digital system designed to support dialysis center staff, patients, and relatives through organized session information, scheduling, and notifications.
+              </p>
+              
+              <!-- Tech Tags -->
+              <div class="pt-2 flex flex-wrap gap-1.5">
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">UI/UX Prototyping</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Database Schema</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Workflow Modeling</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action -->
+          <div class="p-6 pt-0 border-t border-stone-800/60 mt-4 flex items-center justify-between">
+            <span class="text-[11px] text-stone-400">Role: Flow & Architecture</span>
+            <button data-open-project="dialycare" class="text-xs uppercase tracking-wider font-semibold text-[#D4AF72] hover:text-white flex items-center gap-1.5 transition-colors">
+              <span>View Case Study</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. iQueue -->
+        <article class="project-card-item card-luxury-dark rounded-2xl overflow-hidden flex flex-col justify-between group" data-category="development">
+          <div>
+            <!-- Visual Preview Graphic -->
+            <div class="h-52 bg-gradient-to-br from-[#380E1E] to-[#17060D] p-5 border-b border-[#D4AF72]/20 relative overflow-hidden flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-[#6B1732] text-amber-200 border border-amber-600/40">
+                  Proposed Academic System
+                </span>
+                <span class="text-[10px] uppercase tracking-wider text-stone-400">Registrar Ops</span>
+              </div>
+              <!-- Queue Token graphic -->
+              <div class="flex items-center justify-around py-2">
+                <div class="text-center p-2 rounded bg-stone-950/80 border border-[#D4AF72]/30 w-5/12">
+                  <div class="text-[10px] text-stone-400">Serving Now</div>
+                  <div class="text-xl font-serif font-bold text-[#D4AF72]">#B-104</div>
+                </div>
+                <div class="text-center p-2 rounded bg-stone-950/50 border border-stone-800 w-5/12">
+                  <div class="text-[10px] text-stone-400">Next Up</div>
+                  <div class="text-xl font-serif font-bold text-stone-300">#B-105</div>
+                </div>
+              </div>
+              <div class="text-[11px] text-stone-400 flex items-center justify-between border-t border-stone-800/80 pt-2">
+                <span>Request: Good Moral Record</span>
+                <span class="text-emerald-400">Est. 5 min</span>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6 space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-widest text-[#D4AF72]">Development & Systems</div>
+              <h3 class="font-serif text-2xl font-normal text-stone-100 group-hover:text-[#D4AF72] transition-colors">
+                iQueue — Student Request & Appointment System
+              </h3>
+              <p class="text-xs text-stone-300 leading-relaxed font-sans line-clamp-3">
+                A proposed system intended to make student document requests and appointment scheduling more organized, transparent, and convenient.
+              </p>
+              
+              <!-- Tech Tags -->
+              <div class="pt-2 flex flex-wrap gap-1.5">
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">VB.NET Prototype</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Database Design</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Process Modeling</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action -->
+          <div class="p-6 pt-0 border-t border-stone-800/60 mt-4 flex items-center justify-between">
+            <span class="text-[11px] text-stone-400">Role: Systems Analysis & UI</span>
+            <button data-open-project="iqueue" class="text-xs uppercase tracking-wider font-semibold text-[#D4AF72] hover:text-white flex items-center gap-1.5 transition-colors">
+              <span>View Case Study</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. iPrepare -->
+        <article class="project-card-item card-luxury-dark rounded-2xl overflow-hidden flex flex-col justify-between group" data-category="uiux">
+          <div>
+            <!-- Visual Preview Graphic -->
+            <div class="h-52 bg-gradient-to-br from-[#2E0B18] to-[#120409] p-5 border-b border-[#D4AF72]/20 relative overflow-hidden flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-[#3A0D1D] text-[#D4AF72] border border-[#D4AF72]/30">
+                  Educational App Concept
+                </span>
+                <span class="text-[10px] uppercase tracking-wider text-stone-400">Community Safety</span>
+              </div>
+              <!-- Mobile App Radar Mockup -->
+              <div class="flex items-center justify-between py-2">
+                <div class="p-2.5 rounded bg-stone-950/80 border border-stone-800 flex items-center gap-2 w-full">
+                  <div class="w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-xs">⚠</div>
+                  <div>
+                    <div class="text-[11px] font-semibold text-stone-200">Typhoon Readiness Drill</div>
+                    <div class="text-[10px] text-emerald-400">Go-Bag Checklist: 100% Complete</div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-[11px] text-stone-400 flex items-center justify-between border-t border-stone-800/80 pt-2">
+                <span>Offline Quick-Cards: Enabled</span>
+                <span class="text-[#D4AF72]">Interactive Quiz</span>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6 space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-widest text-[#D4AF72]">UI/UX & Interactive Design</div>
+              <h3 class="font-serif text-2xl font-normal text-stone-100 group-hover:text-[#D4AF72] transition-colors">
+                iPrepare — Disaster Preparedness Application
+              </h3>
+              <p class="text-xs text-stone-300 leading-relaxed font-sans line-clamp-3">
+                An educational application concept focused on disaster preparedness through learning materials, safety tips, quizzes, and progress tracking.
+              </p>
+              
+              <!-- Tech Tags -->
+              <div class="pt-2 flex flex-wrap gap-1.5">
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Figma</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Instructional UI/UX</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Gamified Flows</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action -->
+          <div class="p-6 pt-0 border-t border-stone-800/60 mt-4 flex items-center justify-between">
+            <span class="text-[11px] text-stone-400">Role: UI/UX & Curriculum Design</span>
+            <button data-open-project="iprepare" class="text-xs uppercase tracking-wider font-semibold text-[#D4AF72] hover:text-white flex items-center gap-1.5 transition-colors">
+              <span>View Case Study</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. OxyCheck -->
+        <article class="project-card-item card-luxury-dark rounded-2xl overflow-hidden flex flex-col justify-between group" data-category="hardware">
+          <div>
+            <!-- Visual Preview Graphic -->
+            <div class="h-52 bg-gradient-to-br from-[#380E1E] to-[#120409] p-5 border-b border-[#D4AF72]/20 relative overflow-hidden flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-[#4A0D22] text-[#D4AF72] border border-[#D4AF72]/30">
+                  Hardware Concept & Prototype
+                </span>
+                <span class="text-[10px] uppercase tracking-wider text-stone-400">Environmental IoT</span>
+              </div>
+              <!-- OLED Emulation Display -->
+              <div class="p-3 rounded bg-black/90 border border-emerald-900/60 font-mono text-emerald-400 text-xs">
+                <div class="flex justify-between text-[10px] text-stone-400 border-b border-stone-900 pb-1">
+                  <span>MQ-135 + DHT SENSOR</span>
+                  <span class="text-emerald-300 font-bold">42 PPM</span>
+                </div>
+                <div class="flex justify-between mt-1 text-[11px]">
+                  <span>TEMP: 26.4°C</span>
+                  <span>HUMID: 58%</span>
+                </div>
+              </div>
+              <div class="text-[11px] text-stone-400 flex items-center justify-between border-t border-stone-800/80 pt-2">
+                <span>Breadboard Logic: Verified</span>
+                <span class="text-emerald-400">LED: Optimal</span>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6 space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-widest text-[#D4AF72]">Hardware & Embedded Systems</div>
+              <h3 class="font-serif text-2xl font-normal text-stone-100 group-hover:text-[#D4AF72] transition-colors">
+                OxyCheck — Portable Air-Quality Monitor
+              </h3>
+              <p class="text-xs text-stone-300 leading-relaxed font-sans line-clamp-3">
+                A hardware project concept involving environmental sensing components to monitor air-quality-related readings and environmental conditions.
+              </p>
+              
+              <!-- Tech Tags -->
+              <div class="pt-2 flex flex-wrap gap-1.5">
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Basic Electronics</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Sensors (MQ/DHT)</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Circuit Logic</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action -->
+          <div class="p-6 pt-0 border-t border-stone-800/60 mt-4 flex items-center justify-between">
+            <span class="text-[11px] text-stone-400">Role: Circuit Design & Logic</span>
+            <button data-open-project="oxycheck" class="text-xs uppercase tracking-wider font-semibold text-[#D4AF72] hover:text-white flex items-center gap-1.5 transition-colors">
+              <span>View Case Study</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. CableCut Express -->
+        <article class="project-card-item card-luxury-dark rounded-2xl overflow-hidden flex flex-col justify-between group" data-category="hardware">
+          <div>
+            <!-- Visual Preview Graphic -->
+            <div class="h-52 bg-gradient-to-br from-[#320817] to-[#14030A] p-5 border-b border-[#D4AF72]/20 relative overflow-hidden flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-[#6B1732] text-[#D4AF72] border border-[#D4AF72]/30">
+                  Technopreneurship Concept
+                </span>
+                <span class="text-[10px] uppercase tracking-wider text-stone-400">Industrial Automation</span>
+              </div>
+              <!-- Kiosk Schematic graphic -->
+              <div class="flex items-center justify-between py-2 text-center">
+                <div class="p-2 rounded bg-stone-950/80 border border-stone-800 flex-1">
+                  <div class="text-[9px] text-stone-400">TARGET LENGTH</div>
+                  <div class="text-sm font-bold text-[#D4AF72] font-mono">15.00 m</div>
+                </div>
+                <div class="px-2 text-stone-600">➔</div>
+                <div class="p-2 rounded bg-stone-950/80 border border-stone-800 flex-1">
+                  <div class="text-[9px] text-stone-400">BLADE STATE</div>
+                  <div class="text-sm font-bold text-emerald-400 font-mono">ARMED</div>
+                </div>
+              </div>
+              <div class="text-[11px] text-stone-400 flex items-center justify-between border-t border-stone-800/80 pt-2">
+                <span>Accuracy: ± 2mm</span>
+                <span class="text-[#D4AF72]">Safety Sensor: OK</span>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6 space-y-3">
+              <div class="text-[11px] font-mono uppercase tracking-widest text-[#D4AF72]">Hardware & Technopreneurship</div>
+              <h3 class="font-serif text-2xl font-normal text-stone-100 group-hover:text-[#D4AF72] transition-colors">
+                CableCut Express — Wire Measuring Kiosk
+              </h3>
+              <p class="text-xs text-stone-300 leading-relaxed font-sans line-clamp-3">
+                A technopreneurship prototype concept designed to automate wire measurement and cutting for electrical and hardware supply businesses.
+              </p>
+              
+              <!-- Tech Tags -->
+              <div class="pt-2 flex flex-wrap gap-1.5">
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Digital Logic</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Motor Control Concept</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-900 text-stone-300 border border-stone-800">Feasibility Model</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action -->
+          <div class="p-6 pt-0 border-t border-stone-800/60 mt-4 flex items-center justify-between">
+            <span class="text-[11px] text-stone-400">Role: Concept & Logic Flows</span>
+            <button data-open-project="cablecut" class="text-xs uppercase tracking-wider font-semibold text-[#D4AF72] hover:text-white flex items-center gap-1.5 transition-colors">
+              <span>View Case Study</span>
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       5. EDUCATION SECTION
+       Vertical timeline & editorial layout, authentic academic journey
+       =================================================================== -->
+  <section id="education" class="py-28 px-6 bg-[#F8F5F0] text-stone-900 relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#6B1732]">
+          <span>04 / Academic Foundation</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2A0815]">
+          Education & Academic Journey
+        </h2>
+        <p class="text-sm text-stone-600 font-sans leading-relaxed">
+          Cultivating technical rigor, creative problem-solving, and engineering ethics.
+        </p>
+        <div class="w-20 h-0.5 bg-[#D4AF72] mx-auto mt-4"></div>
+      </div>
+
+      <!-- Vertical Editorial Timeline -->
+      <div class="relative border-l-2 border-[#D4AF72]/60 ml-4 sm:ml-32 space-y-12">
+        
+        <!-- Timeline Item 1: Degree -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <!-- Dot Marker -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#4A0D22] border-2 border-[#D4AF72] group-hover:scale-125 transition-transform"></div>
+          
+          <!-- Year Badge -->
+          <div class="sm:absolute sm:-left-32 sm:top-1 text-xs font-mono font-bold text-[#6B1732] uppercase tracking-wider mb-2 sm:mb-0">
+            Current
+          </div>
+
+          <!-- Content Card -->
+          <div class="card-luxury-light p-6 sm:p-8 rounded-2xl bg-white border border-[#E3DAC9] shadow-sm space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-stone-200 pb-3">
+              <div>
+                <h3 class="font-serif text-2xl font-normal text-[#2A0815]">
+                  Bachelor of Science in Computer Engineering
+                </h3>
+                <div class="text-sm font-semibold text-[#6B1732] mt-0.5">
+                  ICCT Colleges
+                </div>
+              </div>
+              <span class="text-xs px-3 py-1 rounded-full bg-[#4A0D22]/10 text-[#4A0D22] font-semibold border border-[#4A0D22]/20">
+                Undergraduate Degree
+              </span>
+            </div>
+
+            <p class="text-sm text-stone-600 leading-relaxed font-sans pt-1">
+              Pursuing a comprehensive curriculum encompassing computer architecture, digital circuit analysis, object-oriented software engineering, discrete mathematics, and technopreneurship.
+            </p>
+
+            <!-- Coursework Badges -->
+            <div class="pt-3">
+              <div class="text-xs font-semibold text-stone-800 uppercase tracking-wider mb-2">Key Academic Coursework & Focus Areas:</div>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span class="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Digital Logic Design</span>
+                <span class="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Microprocessor Systems</span>
+                <span class="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Computer Programming (Java / VB.NET)</span>
+                <span class="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Circuits & Electronics</span>
+                <span class="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Technopreneurship</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: Hands-on Laboratory & Project Work -->
+        <div class="relative pl-8 sm:pl-12 group">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#6B1732] border-2 border-[#D4AF72] group-hover:scale-125 transition-transform"></div>
+          
+          <div class="sm:absolute sm:-left-32 sm:top-1 text-xs font-mono font-bold text-[#6B1732] uppercase tracking-wider mb-2 sm:mb-0">
+            Coursework
+          </div>
+
+          <div class="card-luxury-light p-6 sm:p-8 rounded-2xl bg-white border border-[#E3DAC9] shadow-sm space-y-3">
+            <h3 class="font-serif text-xl font-normal text-[#2A0815]">
+              Laboratory Practice & Team Collaborations
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed font-sans">
+              Engaged in hands-on circuit wiring, breadboard testing of logic ICs, software database modeling exercises, and collaborative system concept defenses with fellow engineering peers.
+            </p>
+            <div class="text-xs text-stone-500 italic">
+              Emphasis on clean engineering documentation, safety protocols, and rigorous peer presentations.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       6. EXPERIENCE, ACHIEVEMENTS & ACTIVITIES SECTION
+       Authentic academic activities, editable placeholders
+       =================================================================== -->
+  <section class="py-24 px-6 bg-[#171316] relative border-t border-[#D4AF72]/20">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF72]">
+          <span>05 / Engagement & Growth</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-normal text-stone-100">
+          Academic Activities & Exploration
+        </h2>
+        <p class="text-sm text-stone-400 font-sans">
+          Participating in continuous learning, seminars, and collaborative academic initiatives.
+        </p>
+      </div>
+
+      <!-- 3 Activity Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="card-luxury-dark p-6 rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-[#4A0D22]/60 text-[#D4AF72] flex items-center justify-center font-serif text-lg font-bold border border-[#D4AF72]/20">
+            01
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-stone-100">Academic Project Collaborations</h3>
+          <p class="text-xs text-stone-300 leading-relaxed font-sans">
+            Active contributor in group capstone explorations, taking initiative in UI/UX architecture, system state machines, and technical requirements documentation.
+          </p>
+          <div class="text-[11px] text-[#D4AF72] font-mono">ICCT Colleges Engineering Cohort</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-luxury-dark p-6 rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-[#6B1732]/60 text-[#D4AF72] flex items-center justify-center font-serif text-lg font-bold border border-[#D4AF72]/20">
+            02
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-stone-100">Seminars & Technical Webinars</h3>
+          <p class="text-xs text-stone-300 leading-relaxed font-sans">
+            Attending departmental technology talks, computer engineering symposiums, and digital design workshops to maintain perspective on industry advancements.
+          </p>
+          <div class="text-[11px] text-[#D4AF72] font-mono">Continuous Learning</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-luxury-dark p-6 rounded-2xl space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-[#4A0D22]/60 text-[#D4AF72] flex items-center justify-center font-serif text-lg font-bold border border-[#D4AF72]/20">
+            03
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-stone-100">Certifications & Future Milestones</h3>
+          <p class="text-xs text-stone-300 leading-relaxed font-sans">
+            Actively pursuing industry certifications in software fundamentals and computer hardware support as part of professional development roadmap.
+          </p>
+          <div class="text-[11px] text-[#D4AF72] font-mono">In Progress / Target 2026–2027</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       7. CONTACT SECTION
+       Deep maroon background, champagne-gold details, clear call to action
+       =================================================================== -->
+  <section id="contact" class="py-28 px-6 maroon-gradient-bg bg-ambient-maroon relative border-t border-[#D4AF72]/30 text-stone-100">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Editorial Pitch & Direct Contacts -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF72]">
+            <span>06 / Get In Touch</span>
+          </div>
+          
+          <h2 class="font-serif text-4xl sm:text-5xl font-normal text-stone-100 leading-tight">
+            Have an Idea <br>
+            <span class="italic font-light gold-gradient-text">Worth Building?</span>
+          </h2>
+
+          <div class="w-20 h-0.5 bg-[#D4AF72]"></div>
+
+          <p class="text-base text-stone-300 font-sans leading-relaxed font-light">
+            “I’m always open to meaningful conversations, creative collaborations, and opportunities to learn and grow in technology.”
+          </p>
+
+          <!-- Direct Info Cards -->
+          <div class="space-y-4 pt-2">
+            
+            <!-- Email Item with Copy Button -->
+            <div class="p-4 rounded-xl bg-[#2A0815]/90 border border-[#D4AF72]/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-[#D4AF72]/15 text-[#D4AF72] flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[11px] text-stone-400 uppercase tracking-wider">Email Address</div>
+                  <a href="mailto:habbeter@example.com" class="text-sm font-semibold text-stone-100 hover:text-[#D4AF72] transition-colors font-mono">
+                    habbeter@example.com
+                  </a>
+                </div>
+              </div>
+              <button id="copyEmailBtn" class="btn-outline-gold px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                </svg>
+                <span>Copy Email</span>
+              </button>
+            </div>
+
+            <!-- Social Links -->
+            <div class="grid grid-cols-2 gap-3">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-[#2A0815]/90 border border-stone-800 hover:border-[#D4AF72]/40 transition-colors flex items-center gap-3 group">
+                <div class="w-8 h-8 rounded-lg bg-stone-900 text-[#D4AF72] flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.66 1.66 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66c0-.92-.74-1.66-1.66-1.66Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[10px] text-stone-400">Professional</div>
+                  <div class="text-xs font-semibold text-stone-200 group-hover:text-[#D4AF72]">LinkedIn Profile</div>
+                </div>
+              </a>
+
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-[#2A0815]/90 border border-stone-800 hover:border-[#D4AF72]/40 transition-colors flex items-center gap-3 group">
+                <div class="w-8 h-8 rounded-lg bg-stone-900 text-[#D4AF72] flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[10px] text-stone-400">Repositories</div>
+                  <div class="text-xs font-semibold text-stone-200 group-hover:text-[#D4AF72]">GitHub Profile</div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="p-8 sm:p-10 rounded-3xl bg-[#280816]/95 border border-[#D4AF72]/30 shadow-2xl relative">
+            
+            <h3 class="font-serif text-2xl font-normal text-stone-100 mb-2">
+              Send a Direct Message
+            </h3>
+            <p class="text-xs text-stone-400 mb-6 font-sans">
+              Fields marked with an asterisk are required. All inquiries will receive a timely response.
+            </p>
+
+            <form id="portfolioContactForm" class="space-y-4" novalidate>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Name -->
+                <div>
+                  <label for="contactName" class="block text-xs font-medium uppercase tracking-wider text-stone-300 mb-1.5">
+                    Your Name *
+                  </label>
+                  <input type="text" id="contactName" name="name" required placeholder="e.g. Professor Cruz / Recruiter"
+                    class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-800 text-stone-100 placeholder-stone-500 text-sm focus:outline-none focus:border-[#D4AF72] focus:ring-1 focus:ring-[#D4AF72] transition-colors">
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label for="contactEmail" class="block text-xs font-medium uppercase tracking-wider text-stone-300 mb-1.5">
+                    Email Address *
+                  </label>
+                  <input type="email" id="contactEmail" name="email" required placeholder="e.g. name@institution.edu"
+                    class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-800 text-stone-100 placeholder-stone-500 text-sm focus:outline-none focus:border-[#D4AF72] focus:ring-1 focus:ring-[#D4AF72] transition-colors">
+                </div>
+              </div>
+
+              <!-- Subject -->
+              <div>
+                <label for="contactSubject" class="block text-xs font-medium uppercase tracking-wider text-stone-300 mb-1.5">
+                  Subject *
+                </label>
+                <input type="text" id="contactSubject" name="subject" required placeholder="e.g. Academic Inquiry / Project Collaboration"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-800 text-stone-100 placeholder-stone-500 text-sm focus:outline-none focus:border-[#D4AF72] focus:ring-1 focus:ring-[#D4AF72] transition-colors">
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label for="contactMessage" class="block text-xs font-medium uppercase tracking-wider text-stone-300 mb-1.5">
+                  Message *
+                </label>
+                <textarea id="contactMessage" name="message" rows="4" required placeholder="Share your message, project idea, or inquiry here..."
+                  class="w-full px-4 py-3 rounded-xl bg-stone-900/80 border border-stone-800 text-stone-100 placeholder-stone-500 text-sm focus:outline-none focus:border-[#D4AF72] focus:ring-1 focus:ring-[#D4AF72] transition-colors resize-y"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-2">
+                <button type="submit" class="btn-gold w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2">
+                  <span>Send Message</span>
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="text-[11px] text-stone-400 text-center pt-2">
+                Note: In this interactive portfolio build, form submissions provide client-side verification and can be connected directly to Formspree or EmailJS.
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       8. FOOTER
+       Clean, minimalist footer containing monogram, links, copyright
+       =================================================================== -->
+  <footer class="bg-[#120308] border-t border-[#D4AF72]/20 py-16 px-6 text-stone-400 font-sans text-xs">
+    <div class="max-w-7xl mx-auto space-y-10">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-10 border-b border-stone-800/80">
+        
+        <!-- Logo & Name -->
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-full monogram-badge flex items-center justify-center text-[#D4AF72] font-display font-bold text-base">
+            HB
+          </div>
+          <div>
+            <div class="font-serif text-lg font-semibold text-stone-100">
+              Hanna Abigail B. Beter
+            </div>
+            <div class="text-[11px] text-[#D4AF72]">
+              BS Computer Engineering • ICCT Colleges
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center justify-center gap-6 text-stone-300">
+          <a href="#hero" class="hover:text-[#D4AF72] transition-colors">Home</a>
+          <a href="#about" class="hover:text-[#D4AF72] transition-colors">About</a>
+          <a href="#skills" class="hover:text-[#D4AF72] transition-colors">Skills</a>
+          <a href="#projects" class="hover:text-[#D4AF72] transition-colors">Projects</a>
+          <a href="#education" class="hover:text-[#D4AF72] transition-colors">Education</a>
+          <a href="#contact" class="hover:text-[#D4AF72] transition-colors">Contact</a>
+        </div>
+
+        <!-- Back to Top -->
+        <a href="#hero" class="btn-outline-gold px-4 py-2 rounded-full text-[11px] uppercase tracking-wider flex items-center gap-1.5 hover:text-white transition-colors">
+          <span>Back to Top</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+          </svg>
+        </a>
+
+      </div>
+
+      <!-- Copyright and Tagline -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-[11px]">
+        <div>
+          Crafting thoughtful engineering solutions through logic, technology, and intentional design.
+        </div>
+        <div>
+          © <span id="currentYear">2026</span> Hanna Abigail B. Beter. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       MODAL: PROJECT CASE STUDY DETAIL VIEWER
+       Accessible, keyboard navigable, responsive modal dialog
+       =================================================================== -->
+  <div id="projectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    
+    <!-- Backdrop Blur -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"></div>
+
+    <!-- Modal Content Dialog Window -->
+    <div id="modalDialog" class="relative w-full max-w-4xl max-h-[90vh] rounded-3xl bg-[#1F0611] border border-[#D4AF72]/40 shadow-2xl overflow-hidden flex flex-col z-10 text-stone-100">
+      
+      <!-- Modal Header Bar -->
+      <div class="px-6 sm:px-8 py-5 border-b border-[#D4AF72]/20 bg-[#290816]/95 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2.5">
+          <span id="modalCategoryBadge" class="text-[10px] font-mono uppercase tracking-widest text-[#D4AF72] bg-[#3B0C1E] px-2.5 py-0.5 rounded border border-[#D4AF72]/30">
+            Category
+          </span>
+          <span id="modalStatusBadge" class="text-[10px] font-mono uppercase tracking-widest text-emerald-300 bg-stone-900 px-2.5 py-0.5 rounded border border-emerald-900">
+            Status
+          </span>
+        </div>
+
+        <!-- Navigation Controls: Prev, Next, Close -->
+        <div class="flex items-center gap-2">
+          <button id="prevProjectBtn" class="p-2 rounded-lg bg-stone-900/80 hover:bg-[#4A0D22] text-stone-300 hover:text-[#D4AF72] transition-colors" title="Previous Project" aria-label="Previous Project">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button id="nextProjectBtn" class="p-2 rounded-lg bg-stone-900/80 hover:bg-[#4A0D22] text-stone-300 hover:text-[#D4AF72] transition-colors" title="Next Project" aria-label="Next Project">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button id="closeModalBtn" class="p-2 rounded-lg bg-stone-900/80 hover:bg-rose-950 text-stone-300 hover:text-rose-200 transition-colors ml-2" title="Close Dialog (Esc)" aria-label="Close Case Study">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body Scroll Area -->
+      <div id="modalScrollArea" class="overflow-y-auto p-6 sm:p-8 space-y-8 flex-1">
+        
+        <!-- Project Title & Tagline -->
+        <div class="space-y-2">
+          <h3 id="modalTitle" class="font-serif text-3xl sm:text-4xl font-normal text-stone-100">
+            Project Title
+          </h3>
+          <p id="modalTagline" class="text-sm font-sans text-[#D4AF72] font-medium">
+            Project Tagline / Overview
+          </p>
+        </div>
+
+        <!-- Metadata Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-xl bg-stone-900/60 border border-stone-800 text-xs">
+          <div>
+            <div class="text-[10px] text-stone-400 uppercase tracking-wider">Hanna's Role</div>
+            <div id="modalRole" class="font-semibold text-stone-200 mt-0.5">Role Name</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-stone-400 uppercase tracking-wider">Academic Timeline</div>
+            <div id="modalTimeline" class="font-semibold text-stone-200 mt-0.5">Timeline</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-stone-400 uppercase tracking-wider">Institution</div>
+            <div class="font-semibold text-stone-200 mt-0.5">ICCT Colleges</div>
+          </div>
+          <div>
+            <div class="text-[10px] text-stone-400 uppercase tracking-wider">Deliverable</div>
+            <div class="font-semibold text-stone-200 mt-0.5">Concept & Defense</div>
+          </div>
+        </div>
+
+        <!-- Visual Schematic Container -->
+        <div id="modalVisualContainer">
+          <!-- Dynamically populated SVG mockup -->
+        </div>
+
+        <!-- Project Overview -->
+        <div class="space-y-2">
+          <h4 class="font-serif text-xl font-semibold text-[#D4AF72] border-b border-[#D4AF72]/20 pb-1">
+            01. System Overview
+          </h4>
+          <p id="modalOverview" class="text-xs sm:text-sm text-stone-300 leading-relaxed font-sans">
+            Overview content...
+          </p>
+        </div>
+
+        <!-- Problem & Proposed Solution Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Problem Statement -->
+          <div class="p-5 rounded-2xl bg-[#280814] border border-rose-900/40 space-y-2">
+            <div class="flex items-center gap-2 text-rose-300 text-xs font-semibold uppercase tracking-wider">
+              <svg class="w-4 h-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <span>Problem Statement</span>
+            </div>
+            <p id="modalProblem" class="text-xs text-stone-300 leading-relaxed font-sans">
+              Problem content...
+            </p>
+          </div>
+
+          <!-- Proposed Solution -->
+          <div class="p-5 rounded-2xl bg-[#280814] border border-[#D4AF72]/40 space-y-2">
+            <div class="flex items-center gap-2 text-[#D4AF72] text-xs font-semibold uppercase tracking-wider">
+              <svg class="w-4 h-4 text-[#D4AF72]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Proposed Solution</span>
+            </div>
+            <p id="modalSolution" class="text-xs text-stone-300 leading-relaxed font-sans">
+              Solution content...
+            </p>
+          </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-xl font-semibold text-[#D4AF72] border-b border-[#D4AF72]/20 pb-1">
+            02. Core Architectural Features
+          </h4>
+          <div id="modalFeatures" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Design & Development Process -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-xl font-semibold text-[#D4AF72] border-b border-[#D4AF72]/20 pb-1">
+            03. Design & Engineering Process
+          </h4>
+          <div id="modalProcess" class="space-y-3 p-4 rounded-xl bg-stone-900/60 border border-stone-800">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Hanna's Contributions -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-xl font-semibold text-[#D4AF72] border-b border-[#D4AF72]/20 pb-1">
+            04. Hanna's Direct Contributions
+          </h4>
+          <ul id="modalContributions" class="space-y-2.5 p-4 rounded-xl bg-stone-900/60 border border-stone-800">
+            <!-- Dynamically populated -->
+          </ul>
+        </div>
+
+        <!-- Technologies Used -->
+        <div class="space-y-3">
+          <h4 class="font-serif text-xl font-semibold text-[#D4AF72] border-b border-[#D4AF72]/20 pb-1">
+            05. Technologies & Tools
+          </h4>
+          <div id="modalTechStack" class="flex flex-wrap gap-2">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Lessons Learned Callout -->
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-[#330717] to-[#20050E] border border-[#D4AF72]/40 space-y-1.5">
+          <div class="text-xs font-semibold uppercase tracking-wider text-[#D4AF72]">Key Lessons Learned & Engineering Takeaway</div>
+          <p id="modalLessons" class="text-xs text-stone-300 italic font-sans leading-relaxed">
+            Lessons content...
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 sm:px-8 py-4 border-t border-stone-800 bg-[#290816]/95 flex items-center justify-between shrink-0 text-xs">
+        <span class="text-stone-400">Computer Engineering Academic Portfolio</span>
+        <button id="closeModalBottomBtn" onclick="document.getElementById('closeModalBtn').click()" class="btn-outline-gold px-4 py-1.5 rounded-lg text-xs font-semibold">
+          Close Case Study
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       TOAST NOTIFICATION COMPONENT
+       Provides luxury animated feedback for form submissions and clipboard
+       =================================================================== -->
+  <div id="toastNotification" class="toast-hidden" role="alert" aria-live="polite">
+    <div id="toastIcon"></div>
+    <div id="toastMessage" class="text-xs leading-relaxed font-sans">
+      Notification message goes here.
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/projects-data.js"></script>
+  <script src="js/skills-data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
